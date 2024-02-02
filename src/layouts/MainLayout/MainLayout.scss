@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  height: 100vh;
+  background-color: #efefef !important;
+}
+
+.inner {
+  width: 500px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  box-shadow: rgb(191, 191, 191) 0px 0px 10px 4px;
+  border-radius: 5px;
+  height: 80vh;
+}
