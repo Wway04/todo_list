@@ -1,0 +1,117 @@
+.filters {
+  &-wrapper {
+    input[type="text"],
+    select {
+      box-sizing: border-box;
+      margin: 0;
+      font-variant: tabular-nums;
+      list-style: none;
+      font-feature-settings: "tnum", "tnum";
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      min-width: 0;
+      padding: 4px 11px;
+      color: rgba(0, 0, 0, 0.85);
+      font-size: 14px;
+      line-height: 1.5715;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #d9d9d9;
+      border-radius: 2px;
+      transition: all 0.3s;
+      outline: 0;
+      &:hover {
+        border-color: #40a9ff;
+      }
+    }
+    input[type="text"]:focus {
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+    h4 {
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+  &-search {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: "tnum", "tnum";
+    position: relative;
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 10px;
+  }
+  &-status {
+    margin-bottom: 10px;
+  }
+  &-priority {
+    margin-bottom: 10px;
+  }
+}
+.heading {
+  &-title {
+  }
+}
+.search {
+  display: flex;
+  margin-bottom: 10px;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    padding: 4px 6px;
+    border-left: 0;
+    line-height: 1.5715;
+    font-weight: 400;
+    background-image: none;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    height: 32px;
+    font-size: 14px;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.85);
+    border: 1px solid #d9d9d9;
+    background: #fff;
+    &:hover {
+      border-color: #40a9ff;
+    }
+    &:active {
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+    svg {
+      fill: rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+.status {
+  display: flex;
+  gap: 20px;
+
+  &-item {
+    display: flex;
+    gap: 10px;
+    input {
+      border: 0;
+      outline: 0;
+    }
+  }
+}
+
+.priority {
+}
