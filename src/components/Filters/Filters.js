@@ -1,13 +1,14 @@
 import { v4 as id } from "uuid";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
+import { filters } from "../../redux/actions";
 import "./Filters.scss";
 const STATUS = [
   { id: id(), value: "All" },
   { id: id(), value: "Completed" },
   { id: id(), value: "Todo" },
 ];
-
 const PRIORITY = [
   { id: id(), value: "All" },
   { id: id(), value: "High" },
@@ -16,16 +17,36 @@ const PRIORITY = [
 ];
 
 function Filters() {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState();
+  const [status, setStatus] = useState("All");
   const [priority, setPriority] = useState("All");
+
+  const handleSearch = (search) => {
+    setSearch(search);
+    dispatch(filters.search(search));
+  };
+
+  const handleStatus = (status) => {
+    setStatus(status);
+    dispatch(filters.status(status));
+  };
+
   const handlePriority = (priority) => {
     setPriority(priority);
+    dispatch(filters.priority(priority));
   };
   return (
     <div className="filters-wrapper">
       <div className="filters-search">
         <h4 className="heading-title">Search</h4>
         <div className="search">
-          <input type="text" placeholder="Search..." />
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
           <button>
             <svg
               viewBox="64 64 896 896"
@@ -47,7 +68,15 @@ function Filters() {
           {STATUS.map((item) => {
             return (
               <div className="status-item">
-                <input key={item.id} id={item.id} type="radio" name="status" />
+                <input
+                  key={item.id}
+                  id={item.id}
+                  type="radio"
+                  name="status"
+                  value={item.value}
+                  checked={item.value === status}
+                  onChange={(e) => handleStatus(e.target.value)}
+                />
                 <label htmlFor={item.id}>
                   <span>{item.value}</span>
                 </label>

@@ -20,6 +20,12 @@ export const priority = (data) => {
   };
 };
 
+export const filters = {
+  search,
+  status,
+  priority,
+};
+
 // search actions
 export const add = (data) => {
   return {

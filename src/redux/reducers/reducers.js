@@ -1,9 +1,9 @@
-import filterReducer from "./filterReducer";
+import filtersReducer from "./filtersReducer";
 import todoListReducer from "./todoListReducer";
 
 const rootReducer = (state = {}, action) => {
   return {
-    filter: filterReducer(state.filter, action),
+    filters: filtersReducer(state.filter, action),
     todoList: todoListReducer(state.todoList, action),
   };
 };
