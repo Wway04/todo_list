@@ -11,6 +11,11 @@ const todoListReducer = (state = initialState, action) => {
     case "todolist/remove":
       // logic for removing
       return [...state];
+    case "todolist/complete":
+      const listId = state.map((item) => item.id);
+      const index = listId.indexOf(action.payload.id);
+      state[index].complete = action.payload.complete;
+      return [...state];
     default:
       return state;
   }

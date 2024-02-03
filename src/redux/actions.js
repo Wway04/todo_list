@@ -5,31 +5,34 @@ const search = (data) => {
     payload: data,
   };
 };
-
 const status = (data) => {
   return {
     type: "filter/status",
     payload: data,
   };
 };
-
 const priority = (data) => {
   return {
     type: "filter/priority",
     payload: data,
   };
 };
-
 export const filters = {
   search,
   status,
   priority,
 };
-
-// search actions
+// todolist
 const add = (data) => {
   return {
     type: "todolist/add",
+    payload: data,
+  };
+};
+
+const complete = (data) => {
+  return {
+    type: "todolist/complete",
     payload: data,
   };
 };
@@ -44,4 +47,5 @@ const remove = (data) => {
 export const todoList = {
   add,
   remove,
+  complete,
 };

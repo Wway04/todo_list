@@ -22,7 +22,7 @@ function TodoList() {
   };
 
   const handleAddTodo = () => {
-    const item = { id: id(), name: todo, priority };
+    const item = { id: id(), name: todo, priority, complete: false };
     dispatch(todoList.add(item));
   };
 

@@ -1,8 +1,10 @@
-.complete {
+.active {
+  text-decoration: line-through;
+  opacity: 0.6;
 }
 
 .list {
-  height: calc(100% - 40px);
+  height: 248px;
   overflow: scroll;
   &-item {
     display: flex;
@@ -18,7 +20,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
-    span {
+    label {
       color: rgba(0, 0, 0, 0.7);
     }
     input {
@@ -46,6 +48,7 @@
       opacity: 1;
       transition: all 0.3s;
       background: #fafafa;
+      display: flex;
     }
     .High {
       color: #cf1322;
