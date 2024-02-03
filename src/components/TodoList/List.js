@@ -10,7 +10,7 @@ function List() {
     <div className="list">
       {todoList.map((item) => {
         return (
-          <div key={item.id}>
+          <div key={item.id} className="list-item">
             <div className="item-action">
               <input type="checkbox" />
               <span>{item.name}</span>
