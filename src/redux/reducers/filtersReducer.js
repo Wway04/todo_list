@@ -1,7 +1,7 @@
 const initialState = {
   search: "",
-  status: "all",
-  priority: "all",
+  status: "All",
+  priority: "All",
 };
 
 const filtersReducer = (state = initialState, action) => {

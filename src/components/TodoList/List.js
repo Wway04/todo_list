@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { todoListSelector } from "../../redux/selector";
+import { todoListRemainingSelector } from "../../redux/selector";
 
 import "./TodoList.scss";
 import Item from "./Item";
 
 function List() {
-  const todoList = useSelector(todoListSelector);
+  const todoList = useSelector(todoListRemainingSelector);
   return (
     <div className="list">
       {todoList.map((item) => {

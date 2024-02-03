@@ -83,7 +83,11 @@ function Filters() {
       <div className="filters-priority">
         <h4 className="heading-title">Filter by priority</h4>
         <div className="priority">
-          <PrioritySelect priority={priority} setPriority={setPriority} />
+          <PrioritySelect
+            priority={priority}
+            setPriority={handlePriority}
+            all
+          />
         </div>
       </div>
     </div>
