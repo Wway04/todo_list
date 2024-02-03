@@ -4,16 +4,11 @@ import { useDispatch } from "react-redux";
 
 import { filters } from "../../redux/actions";
 import "./Filters.scss";
+import PrioritySelect from "../PrioritySelect";
 const STATUS = [
   { id: id(), value: "All" },
   { id: id(), value: "Completed" },
   { id: id(), value: "Todo" },
-];
-const PRIORITY = [
-  { id: id(), value: "All" },
-  { id: id(), value: "High" },
-  { id: id(), value: "Medium" },
-  { id: id(), value: "Low" },
 ];
 
 function Filters() {
@@ -88,20 +83,7 @@ function Filters() {
       <div className="filters-priority">
         <h4 className="heading-title">Filter by priority</h4>
         <div className="priority">
-          <select
-            name=""
-            id=""
-            value={priority}
-            onChange={(e) => handlePriority(e.target.value)}
-          >
-            {PRIORITY.map((item) => {
-              return (
-                <option key={item.id} value={item.value}>
-                  {item.value}
-                </option>
-              );
-            })}
-          </select>
+          <PrioritySelect priority={priority} setPriority={setPriority} />
         </div>
       </div>
     </div>

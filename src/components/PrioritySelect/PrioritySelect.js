@@ -5,12 +5,12 @@ const PRIORITY = [
   { id: id(), value: "Medium" },
   { id: id(), value: "Low" },
 ];
-function PrioritySelect({ priority, handlePriority }) {
+function PrioritySelect({ priority, setPriority }) {
   return (
     <select
       id=""
       value={priority}
-      onChange={(e) => handlePriority(e.target.value)}
+      onChange={(e) => setPriority(e.target.value)}
     >
       {PRIORITY.map((item) => (
         <option key={item.id} id={item.id} value={item.value}>
