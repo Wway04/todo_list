@@ -1,8 +1,9 @@
 import { v4 as id } from "uuid";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { filters } from "../../redux/actions";
+import { todoListSelector } from "../../redux/selector";
 import "./Filters.scss";
 import PrioritySelect from "../PrioritySelect";
 const STATUS = [
@@ -16,6 +17,9 @@ function Filters() {
   const [search, setSearch] = useState();
   const [status, setStatus] = useState("All");
   const [priority, setPriority] = useState("All");
+  const [togglePopperSearch, setTogglePopperSearch] = useState(false);
+
+  const todoListSearch = useSelector(todoListSelector);
 
   const handleSearch = (search) => {
     setSearch(search);
@@ -40,6 +44,8 @@ function Filters() {
             type="text"
             placeholder="Search..."
             value={search}
+            onFocus={() => setTogglePopperSearch(true)}
+            onBlur={() => setTogglePopperSearch(false)}
             onChange={(e) => handleSearch(e.target.value)}
           />
           <button>
@@ -56,6 +62,23 @@ function Filters() {
             </svg>
           </button>
         </div>
+        {togglePopperSearch && (
+          <div className="search-todolist">
+            {todoListSearch.map((item) => {
+              if (item.name?.includes(search)) {
+                return (
+                  <div
+                    className="search-item"
+                    onMouseDown={() => handleSearch(item.name)}
+                  >
+                    <span>{item.name}</span>
+                  </div>
+                );
+              }
+              return <></>;
+            })}
+          </div>
+        )}
       </div>
       <div className="filters-status">
         <h4 className="heading-title">Filter by status</h4>
