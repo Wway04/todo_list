@@ -16,17 +16,16 @@ export const todoListRemainingSelector = createSelector(
   prioritySelector,
   (todoList, search, status, priority) => {
     return todoList.filter((item) => {
-      console.log(priority, item.priority);
-
+      console.log(search);
       let isItem = true;
-      if (!item.name.includes(search)) isItem = false;
+      if (!item.name.includes(search)) return (isItem = false);
       if (status === "Completed" && !item.complete) {
-        isItem = false;
+        return (isItem = false);
       } else if (status === "Todo" && item.complete) {
-        isItem = false;
+        return (isItem = false);
       }
       if (!(priority === "All") && !(priority === item.priority)) {
-        isItem = false;
+        return (isItem = false);
       }
       return isItem;
     });

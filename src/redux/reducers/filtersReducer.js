@@ -7,6 +7,7 @@ const initialState = {
 const filtersReducer = (state = initialState, action) => {
   switch (action.type) {
     case "filter/search":
+      console.log(action.payload);
       return {
         ...state,
         search: action.payload,

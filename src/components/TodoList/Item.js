@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { todoList } from "../../redux/actions";
 
 function Item({ todo }) {
-  console.log("🚀 ~ Item ~ todo:", todo);
   const dispatch = useDispatch();
   const [isCompleted, setIsCompleted] = useState(false);
 
